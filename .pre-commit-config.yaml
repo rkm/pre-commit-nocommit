@@ -17,7 +17,16 @@ repos:
     hooks:
       - id: check-hooks-apply
       - id: check-useless-excludes
-  # todo dogfood
+  - repo: https://github.com/rkm/pre-commit-nocommit
+    rev: "d3c94ed5330b0e28478410e7f05415061757d1fa" # autoupdate this
+    hooks:
+      - id: nocommit
+        exclude: |
+          (?x)^(
+              .pre-commit-config.yaml|
+              .pre-commit-hooks.yaml|
+              README.md
+          )
   - repo: https://github.com/codespell-project/codespell
     rev: "v2.1.0"
     hooks:
