@@ -1,0 +1,6 @@
+---
+- id: nocommit
+  name: disallow nocommit
+  entry: (?i)nocommit
+  language: pygrep
+  types: [text]

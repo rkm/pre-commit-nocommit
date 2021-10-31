@@ -1,0 +1,38 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v4.0.1"
+    hooks:
+      # General
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+  # General
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+  # todo dogfood
+  - repo: https://github.com/codespell-project/codespell
+    rev: "v2.1.0"
+    hooks:
+      - id: codespell
+        args:
+          [
+            --ignore-words,
+            .meta/codespell-ignores,
+            --exclude-file,
+            .meta/codespell-excludes,
+            --ignore-regex,
+            '\Whttps?://\S*',
+          ]
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v2.4.1"
+    hooks:
+      - id: prettier
+        args: [--config, .meta/prettierrc.yml]
