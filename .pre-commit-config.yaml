@@ -18,7 +18,7 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
   - repo: https://github.com/rkm/pre-commit-nocommit
-    rev: "b4dc8cafaf3ed98ffe7000415279c589c097c7bb"
+    rev: "v1.0.0"
     hooks:
       - id: nocommit
         exclude: |
