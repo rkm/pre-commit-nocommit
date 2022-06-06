@@ -13,4 +13,9 @@ Sample `.pre-commit-config.yaml`:
   rev: "" # autoupdate this
   hooks:
       - id: nocommit
+      nocommit
+      exclude: |
+          (?x)^(
+            .pre-commit-config.yaml
+          )
 ```
